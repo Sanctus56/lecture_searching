@@ -12,9 +12,14 @@ def read_data(file_name, field):
     :return: (list, string),
     """
     file_path = os.path.join(cwd_path, file_name)
+    with open(file_path) as data_file:
+        data = json.load(data_file)
+    return data(field)
+
 
 
 def main():
+    sequential_data = read_data("sequential.json", "unordered_numbers")
     pass
 
 
